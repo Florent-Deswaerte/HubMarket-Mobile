@@ -6,5 +6,7 @@ public class Token {
     @SerializedName("token")
     private String token;
 
-    public String getToken(){return token;}
+    public String getToken() {
+        return token;
+    }
 }

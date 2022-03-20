@@ -1,13 +1,16 @@
 package com.florent.hubmarketmobile;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+
+import com.google.gson.Gson;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -15,8 +18,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class ConnexionActivity extends AppCompatActivity {
-
+public class ConnexionActivity extends AppExtension {
 
 
     @Override
@@ -24,7 +26,7 @@ public class ConnexionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_connexion);
 
-        Button btnLogin= (Button) findViewById(R.id.btnLogin);
+        Button btnLogin = (Button) findViewById(R.id.btnLogin);
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://s4-8014.nuage-peda.fr/Hubmarket/public/api/")
@@ -46,21 +48,40 @@ public class ConnexionActivity extends AppCompatActivity {
                 connexionUser.enqueue(new Callback<Token>() {
                     @Override
                     public void onResponse(@NonNull Call<Token> call, @NonNull Response<Token> response) {
-                        assert response.body() != null;
-                        String tokenString = response.body().getToken();
-                        System.out.println("Token: " + tokenString);
-                        try {
-                            JWTUtils.decoded(tokenString);
-                        } catch (Exception e) {
-                            e.printStackTrace();
+                        System.out.println(response.code());
+                        if (response.code() != 200) {
+                            wrongIdentifiants.setText("Wrong identifiants");
+
+                        } else {
+                            assert response.body() != null;
+                            String tokenString = response.body().getToken();
+                            System.out.println("Token: " + tokenString);
+
+                            try {
+                                String decodedToken = JWTUtils.getJson(tokenString);
+                                System.out.println(decodedToken);
+
+                                Gson gson = new Gson();
+
+                                User user = gson.fromJson(decodedToken, User.class);
+                                AppExtension.setUser(user);
+
+                                startActivity(new Intent(ConnexionActivity.this, ShopActivity.class));
+
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
                         }
+
                     }
 
                     @Override
                     public void onFailure(@NonNull Call<Token> call, @NonNull Throwable error) {
                         System.out.println(error);
                         wrongIdentifiants.setText("Wrong identifiants");
+
                     }
+
 
                 });
             }
