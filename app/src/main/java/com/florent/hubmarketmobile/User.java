@@ -4,10 +4,9 @@ public class User {
 
     String username;
     String password;
-    String name;
+    String nom;
     String id;
-    String email;
-    String surname;
+    String prenom;
     String phone;
     String address;
     String pays;
@@ -21,37 +20,46 @@ public class User {
         this.password = password;
 
     }
-    public String getUserId(){
+
+    public String getUserId() {
         return this.id;
     }
-    public String getUserEmail(){
-        return this.email;
+
+    public String getUserEmail() { return this.username; }
+
+    public String getUserNom() {
+        return this.nom;
     }
-    public String getUserSurname(){
-        return this.surname;
+
+    public String getUserPrenom() {
+        return this.prenom;
     }
-    public String getUserName(){
-        return this.name;
-    }
-    public String getUserPhone(){
+
+    public String getUserPhone() {
         return this.phone;
     }
-    public String getUserAddress(){
+
+    public String getUserAddress() {
         return this.address;
     }
-    public String getUserPays(){
+
+    public String getUserPays() {
         return this.pays;
     }
-    public String getUserVille(){
+
+    public String getUserVille() {
         return this.ville;
     }
-    public String[] getUserRoles(){
+
+    public String[] getUserRoles() {
         return this.roles;
     }
-    public Boolean getUserPanier(){
+
+    public Boolean getUserPanier() {
         return this.panier;
     }
-    public String[] getUserCommandes(){
+
+    public String[] getUserCommandes() {
         return this.commandes;
     }
 
