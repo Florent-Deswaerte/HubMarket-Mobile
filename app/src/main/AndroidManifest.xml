@@ -17,6 +17,9 @@
         <activity
             android:name=".ConnexionActivity"
             android:exported="false" />
+        <activity
+            android:name=".ShopActivity"
+            android:exported="false" />
 
         <activity
             android:name=".MainActivity"
