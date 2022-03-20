@@ -10,6 +10,6 @@ public class ShopActivity extends AppExtension {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop);
 
-        System.out.println(AppExtension.getUser());
+        System.out.println(AppExtension.getUser().getUserCommandes());
     }
 }

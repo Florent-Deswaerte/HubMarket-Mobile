@@ -12,8 +12,8 @@ public class User {
     String pays;
     String ville;
     String[] roles;
-    Boolean panier;
-    String[] commandes;
+    Object panier;
+    Object commandes;
 
     public User(String username, String password) {
         this.username = username;
@@ -55,11 +55,11 @@ public class User {
         return this.roles;
     }
 
-    public Boolean getUserPanier() {
+    public Object getUserPanier() {
         return this.panier;
     }
 
-    public String[] getUserCommandes() {
+    public Object getUserCommandes() {
         return this.commandes;
     }
 

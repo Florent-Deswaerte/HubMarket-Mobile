@@ -29,7 +29,7 @@ public class ConnexionActivity extends AppExtension {
         Button btnLogin = (Button) findViewById(R.id.btnLogin);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://s4-8014.nuage-peda.fr/Hubmarket/public/api/")
+                .baseUrl("http://s4-8010.nuage-peda.fr/HubMarket-Site/public/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
