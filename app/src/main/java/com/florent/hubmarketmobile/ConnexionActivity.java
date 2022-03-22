@@ -2,13 +2,16 @@ package com.florent.hubmarketmobile;
 
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.gson.Gson;
 
@@ -18,18 +21,23 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class ConnexionActivity extends AppUtils {
+public class ConnexionActivity extends AppCompatActivity {
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        SharedPreferences cacheStorage = PreferenceManager
+                .getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = cacheStorage.edit();
+
         setContentView(R.layout.activity_connexion);
 
         Button btnLogin = (Button) findViewById(R.id.btnLogin);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://s4-8010.nuage-peda.fr/HubMarket-Site/public/api/")
+                .baseUrl("http://s4-8014.nuage-peda.fr/Hubmarket/public/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -49,9 +57,11 @@ public class ConnexionActivity extends AppUtils {
                     @Override
                     public void onResponse(@NonNull Call<Token> call, @NonNull Response<Token> response) {
                         System.out.println(response.code());
-                        if (response.code() != 200) {
-                            wrongIdentifiants.setText("Wrong identifiants");
-
+                        if (response.code() == 401) {
+                            wrongIdentifiants.setText("Invalid Credentials");
+                        }
+                        else if(response.code() == 503) {
+                            wrongIdentifiants.setText("Service Unavailable");
                         } else {
                             assert response.body() != null;
                             String tokenString = response.body().getToken();
@@ -63,10 +73,14 @@ public class ConnexionActivity extends AppUtils {
                                 Gson gson = new Gson();
 
                                 User user = gson.fromJson(decodedToken, User.class);
-                                AppUtils.setUser(user);
+                                Singleton.getInstance().setUser(user);
+                                Singleton.getInstance().setToken(tokenString);
 
+                                editor.putString("UserToken", tokenString);
+                                editor.apply();
+
+                                System.out.println("Token Cached: " + cacheStorage.getString("UserToken", null));
                                 startActivity(new Intent(ConnexionActivity.this, ShopActivity.class));
-
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }
