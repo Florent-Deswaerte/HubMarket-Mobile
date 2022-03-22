@@ -15,6 +15,7 @@ public class User {
     Object panier;
     Object commandes;
 
+    public User() {}
     public User(String username, String password) {
         this.username = username;
         this.password = password;
@@ -63,4 +64,18 @@ public class User {
         return this.commandes;
     }
 
+    public User resetUser() {
+        this.address = null;
+        this.password = null;
+        this.id = null;
+        this.commandes = null;
+        this.nom = null;
+        this.panier = null;
+        this.pays = null;
+        this.phone = null;
+        this.prenom = null;
+        this.roles = null;
+        this.ville = null;
+        return this;
+    }
 }

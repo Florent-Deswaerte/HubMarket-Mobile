@@ -18,7 +18,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class ConnexionActivity extends AppExtension {
+public class ConnexionActivity extends AppUtils {
 
 
     @Override
@@ -56,7 +56,6 @@ public class ConnexionActivity extends AppExtension {
                             assert response.body() != null;
                             String tokenString = response.body().getToken();
                             System.out.println("Token: " + tokenString);
-
                             try {
                                 String decodedToken = JWTUtils.getJson(tokenString);
                                 System.out.println(decodedToken);
@@ -64,7 +63,7 @@ public class ConnexionActivity extends AppExtension {
                                 Gson gson = new Gson();
 
                                 User user = gson.fromJson(decodedToken, User.class);
-                                AppExtension.setUser(user);
+                                AppUtils.setUser(user);
 
                                 startActivity(new Intent(ConnexionActivity.this, ShopActivity.class));
 
