@@ -19,8 +19,6 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ConnexionActivity extends AppExtension {
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,20 +70,14 @@ public class ConnexionActivity extends AppExtension {
                                 e.printStackTrace();
                             }
                         }
-
                     }
-
                     @Override
                     public void onFailure(@NonNull Call<Token> call, @NonNull Throwable error) {
                         System.out.println(error);
                         wrongIdentifiants.setText("Wrong identifiants");
-
                     }
-
-
                 });
             }
         });
     }
-
 }
