@@ -2,7 +2,7 @@ package com.florent.hubmarketmobile;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class AppExtension extends AppCompatActivity {
+public class AppUtils extends AppCompatActivity {
 
     private static User user;
 

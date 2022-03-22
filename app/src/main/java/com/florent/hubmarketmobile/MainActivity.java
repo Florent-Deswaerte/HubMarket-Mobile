@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppExtension {
+public class MainActivity extends AppUtils {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
