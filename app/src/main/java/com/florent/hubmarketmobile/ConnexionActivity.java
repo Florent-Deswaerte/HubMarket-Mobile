@@ -18,7 +18,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class ConnexionActivity extends AppExtension {
+public class ConnexionActivity extends AppUtils {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,7 +62,7 @@ public class ConnexionActivity extends AppExtension {
                                 Gson gson = new Gson();
 
                                 User user = gson.fromJson(decodedToken, User.class);
-                                AppExtension.setUser(user);
+                                AppUtils.setUser(user);
 
                                 startActivity(new Intent(ConnexionActivity.this, UserActivity.class));
 
