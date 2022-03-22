@@ -65,7 +65,7 @@ public class ConnexionActivity extends AppUtils {
                                 User user = gson.fromJson(decodedToken, User.class);
                                 AppUtils.setUser(user);
 
-                                startActivity(new Intent(ConnexionActivity.this, ShopActivity.class));
+                                startActivity(new Intent(ConnexionActivity.this, UserActivity.class));
 
                             } catch (Exception e) {
                                 e.printStackTrace();
