@@ -19,6 +19,8 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ConnexionActivity extends AppUtils {
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,13 +50,12 @@ public class ConnexionActivity extends AppUtils {
                     public void onResponse(@NonNull Call<Token> call, @NonNull Response<Token> response) {
                         System.out.println(response.code());
                         if (response.code() != 200) {
-                            wrongIdentifiants.setText("Mauvais identifiantsui");
+                            wrongIdentifiants.setText("Wrong identifiants");
 
                         } else {
                             assert response.body() != null;
                             String tokenString = response.body().getToken();
                             System.out.println("Token: " + tokenString);
-
                             try {
                                 String decodedToken = JWTUtils.getJson(tokenString);
                                 System.out.println(decodedToken);
@@ -64,20 +65,26 @@ public class ConnexionActivity extends AppUtils {
                                 User user = gson.fromJson(decodedToken, User.class);
                                 AppUtils.setUser(user);
 
-                                startActivity(new Intent(ConnexionActivity.this, UserActivity.class));
+                                startActivity(new Intent(ConnexionActivity.this, ShopActivity.class));
 
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }
                         }
+
                     }
+
                     @Override
                     public void onFailure(@NonNull Call<Token> call, @NonNull Throwable error) {
                         System.out.println(error);
                         wrongIdentifiants.setText("Wrong identifiants");
+
                     }
+
+
                 });
             }
         });
     }
+
 }
