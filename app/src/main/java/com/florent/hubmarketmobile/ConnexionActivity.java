@@ -48,7 +48,7 @@ public class ConnexionActivity extends AppUtils {
                     public void onResponse(@NonNull Call<Token> call, @NonNull Response<Token> response) {
                         System.out.println(response.code());
                         if (response.code() != 200) {
-                            wrongIdentifiants.setText("Wrong identifiants");
+                            wrongIdentifiants.setText("Mauvais identifiantsui");
 
                         } else {
                             assert response.body() != null;
