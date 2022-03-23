@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -31,10 +32,11 @@ public class ConnexionActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_connexion);
 
+        CheckBox checkBoxRememberMe = (CheckBox) findViewById(R.id.rememberMeCheckBox);
         Button btnLogin = (Button) findViewById(R.id.btnLogin);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://s4-8010.nuage-peda.fr/HubMarket-Site/public/api/")
+                .baseUrl("http://s4-8014.nuage-peda.fr/Hubmarket/public/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -72,9 +74,11 @@ public class ConnexionActivity extends AppCompatActivity {
                                 User user = gson.fromJson(decodedToken, User.class);
                                 Singleton.getInstance().setUser(user);
                                 Singleton.getInstance().setToken(tokenString);
-                                editor.putString("UserToken", tokenString);
-                                editor.apply();
-                                System.out.println("Token Cached: " + cacheStorage.getString("UserToken", null));
+                                if(checkBoxRememberMe.isChecked()){
+                                    editor.putString("UserToken", tokenString);
+                                    editor.apply();
+                                    System.out.println("Token Cached: " + cacheStorage.getString("UserToken", null));
+                                }
                                 startActivity(new Intent(ConnexionActivity.this, UserActivity.class));
                             } catch (Exception e) {
                                 e.printStackTrace();

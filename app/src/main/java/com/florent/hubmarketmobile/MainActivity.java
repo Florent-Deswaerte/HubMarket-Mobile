@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
             Singleton.getInstance().setUser(user);
             Singleton.getInstance().setToken(tokenCachedString);
 
+            startActivity(new Intent(MainActivity.this, UserActivity.class));
             System.out.println("USER RESTORED SESSION: " + user);
         }
 
