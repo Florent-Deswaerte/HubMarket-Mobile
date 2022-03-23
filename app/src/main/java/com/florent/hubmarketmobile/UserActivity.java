@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.florent.hubmarketmobile.fragments.HistoriqueFragment;
@@ -13,7 +14,7 @@ import com.florent.hubmarketmobile.fragments.UserProfilFragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class UserActivity extends AppUtils implements BottomNavigationView.OnNavigationItemSelectedListener{
+public class UserActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener{
 
     Fragment HistoriqueFragment;
     Fragment PanierFragment;
@@ -36,7 +37,7 @@ public class UserActivity extends AppUtils implements BottomNavigationView.OnNav
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
 
-        System.out.println(AppUtils.getUser().getUserCommandes());
+        System.out.println(Singleton.getInstance().getUser().getUserCommandes());
     }
 
     private boolean loadFragment(Fragment fragment){
