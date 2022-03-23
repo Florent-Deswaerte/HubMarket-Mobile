@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
             Singleton.getInstance().setToken(tokenCachedString);
 
             System.out.println("USER RESTORED SESSION: " + user);
+            startActivity(new Intent(MainActivity.this, UserActivity.class));
         }
 
         Button connexion_btn = (Button) findViewById(R.id.connexion_btn);
