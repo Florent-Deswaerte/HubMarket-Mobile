@@ -75,10 +75,8 @@ public class ConnexionActivity extends AppCompatActivity {
                                 User user = gson.fromJson(decodedToken, User.class);
                                 Singleton.getInstance().setUser(user);
                                 Singleton.getInstance().setToken(tokenString);
-
                                 editor.putString("UserToken", tokenString);
                                 editor.apply();
-
                                 System.out.println("Token Cached: " + cacheStorage.getString("UserToken", null));
                                 startActivity(new Intent(ConnexionActivity.this, ShopActivity.class));
                             } catch (Exception e) {
