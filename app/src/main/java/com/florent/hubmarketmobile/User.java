@@ -2,18 +2,18 @@ package com.florent.hubmarketmobile;
 
 public class User {
 
-    String username;
-    String password;
-    String nom;
-    String id;
-    String prenom;
-    String phone;
-    String address;
-    String pays;
-    String ville;
-    String[] roles;
-    Object panier;
-    Object commandes;
+    private String username;
+    private String password;
+    private String nom;
+    private String id;
+    private String prenom;
+    private String phone;
+    private String address;
+    private String pays;
+    private String ville;
+    private String[] roles;
+    private Object panier;
+    private Commande[] commandes;
 
     public User() {}
     public User(String username, String password) {
@@ -60,10 +60,6 @@ public class User {
         return this.panier;
     }
 
-    public Object getUserCommandes() {
-        return this.commandes;
-    }
-
     public User resetUser() {
         this.address = null;
         this.password = null;
@@ -77,5 +73,13 @@ public class User {
         this.roles = null;
         this.ville = null;
         return this;
+    }
+
+    public Commande[] getCommandes() {
+        return commandes;
+    }
+
+    public void setCommandes(Commande[] commandes) {
+        this.commandes = commandes;
     }
 }
