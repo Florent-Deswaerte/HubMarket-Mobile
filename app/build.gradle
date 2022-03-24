@@ -7,8 +7,8 @@ android {
 
     defaultConfig {
         applicationId "com.florent.hubmarketmobile"
-        minSdk 30
-        targetSdk 30
+        minSdk 28
+        targetSdk 31
         versionCode 1
         versionName "1.0"
 
@@ -47,4 +47,5 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'com.auth0.android:jwtdecode:2.0.1'
+    implementation 'com.scwang.wave:MultiWaveHeader:1.0.0'
 }
