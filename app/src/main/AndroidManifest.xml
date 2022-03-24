@@ -17,9 +17,6 @@
             android:name=".UserActivity"
             android:exported="false" />
         <activity
-            android:name=".UserProfilActivity"
-            android:exported="false" />
-        <activity
             android:name=".ConnexionActivity"
             android:exported="false" />
         <activity
