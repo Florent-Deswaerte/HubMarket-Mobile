@@ -10,6 +10,10 @@ public class ShopActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop);
 
-        System.out.println(Singleton.getInstance().getUser().getUserCommandes());
+        Commandes[] commandes = Singleton.getInstance().getUser().getCommandes();
+        for (Commandes commande : commandes)
+        {
+            System.out.println(commande.getId());
+        }
     }
 }

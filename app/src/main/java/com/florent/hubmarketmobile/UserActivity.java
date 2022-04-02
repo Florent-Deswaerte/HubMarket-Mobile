@@ -37,7 +37,7 @@ public class UserActivity extends AppCompatActivity implements BottomNavigationV
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
 
-        System.out.println(Singleton.getInstance().getUser().getUserCommandes());
+        System.out.println(Singleton.getInstance().getUser().getCommandes());
     }
 
     private boolean loadFragment(Fragment fragment){
