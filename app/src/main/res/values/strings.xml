@@ -8,7 +8,8 @@
     <string name="previous">Previous</string>
 
     <string name="historiqueFragment">Historique des commandes</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="PanierFragment">Votre Panier</string>
+    <string name="InformationFragment">Vos Informations Personnelles</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>

@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.florent.hubmarketmobile.Commandes;
 import com.florent.hubmarketmobile.R;
 import com.florent.hubmarketmobile.Singleton;
-import com.florent.hubmarketmobile.UserActivity;
 import com.florent.hubmarketmobile.historique.HistoriqueListAdapter;
 
 public class HistoriqueFragment extends Fragment {
@@ -27,9 +26,8 @@ public class HistoriqueFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        userHistoriqueListRecyclerView = view.findViewById(R.id.historiqueRecyclerView);
+        userHistoriqueListRecyclerView = view.findViewById(R.id.PanierRecyclerView);
         Commandes[] commandes = Singleton.getInstance().getUser().getCommandes();
-        System.out.println(userHistoriqueListRecyclerView);
         userHistoriqueListRecyclerView.setHasFixedSize(true);
         userHistoriqueListManager = new LinearLayoutManager(getContext());
         userHistoriqueListRecyclerView.setLayoutManager(userHistoriqueListManager);

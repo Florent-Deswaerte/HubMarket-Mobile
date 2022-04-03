@@ -12,7 +12,7 @@ public class User {
     String pays;
     String ville;
     String[] roles;
-    Object panier;
+    private Panier[] panier;
     private Commandes[] commandes;
 
     public User() {}
@@ -56,7 +56,7 @@ public class User {
         return this.roles;
     }
 
-    public Object getUserPanier() {
+    public Panier[] getPanier() {
         return this.panier;
     }
 

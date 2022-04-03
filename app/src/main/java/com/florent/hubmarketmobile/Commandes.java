@@ -2,11 +2,16 @@ package com.florent.hubmarketmobile;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.util.Date;
+import java.util.Locale;
 
 public class Commandes {
         private String id;
-        private Date date;
+        private String date;
         private Float total_commande;
         private String status;
 
@@ -20,11 +25,11 @@ public class Commandes {
             this.id = id;
         }
 
-        public Date getDate() {
+        public String getDate() {
             return date;
         }
 
-        public void setDate(Date date) {
+        public void setDate(String date) {
             this.date = date;
         }
 
