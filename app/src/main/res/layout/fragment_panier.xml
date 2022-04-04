@@ -12,10 +12,10 @@
         android:text="Total"
         app:layout_constraintBottom_toTopOf="@+id/PanierRecyclerView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.849"
+        app:layout_constraintHorizontal_bias="0.865"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewPanier"
-        app:layout_constraintVertical_bias="0.727" />
+        app:layout_constraintVertical_bias="0.726" />
 
     <TextView
         android:id="@+id/textViewProduit"
@@ -24,7 +24,7 @@
         android:text="Produit"
         app:layout_constraintBottom_toTopOf="@+id/PanierRecyclerView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.12"
+        app:layout_constraintHorizontal_bias="0.098"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewPanier"
         app:layout_constraintVertical_bias="0.726" />
@@ -36,6 +36,7 @@
         android:text="Quantité"
         app:layout_constraintBottom_toTopOf="@+id/PanierRecyclerView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.536"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewPanier"
         app:layout_constraintVertical_bias="0.726" />

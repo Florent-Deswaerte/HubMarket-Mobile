@@ -5,8 +5,8 @@ public class Produits {
     private String nom;
     private String qty;
     private Float prix;
-    private String fournisseur;
-    private String categories;
+    private String[] fournisseur;
+    private String[] categories;
 
     public Produits() {}
 
@@ -42,19 +42,19 @@ public class Produits {
         this.prix = prix;
     }
 
-    public String getFournisseur() {
+    public String[] getFournisseur() {
         return fournisseur;
     }
 
-    public void setFournisseur(String fournisseur) {
+    public void setFournisseur(String[] fournisseur) {
         this.fournisseur = fournisseur;
     }
 
-    public String getCategories() {
+    public String[] getCategories() {
         return categories;
     }
 
-    public void setCategories(String categories) {
+    public void setCategories(String[] categories) {
         this.categories = categories;
     }
 }

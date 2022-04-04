@@ -19,20 +19,14 @@ public class InformationsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        Panier[] paniers = Singleton.getInstance().getUser().getPanier();
-        System.out.println(paniers);
-        for (Panier panier : paniers) {
-            System.out.println(panier.getId());
-            System.out.println(panier.getProduits());
-            Produits[] produits = panier.getProduits();
-            System.out.println(produits);
-            for (Produits produit : produits) {
+        Panier paniers = Singleton.getInstance().getUser().getPanier();
+            for (Produits produit : paniers.getProduits()) {
                 System.out.println(produit.getId());
                 System.out.println(produit.getNom());
                 System.out.println(produit.getPrix());
                 System.out.println(produit.getQty());
             }
-        }
+
         return inflater.inflate(R.layout.fragment_information, null);
     }
 }

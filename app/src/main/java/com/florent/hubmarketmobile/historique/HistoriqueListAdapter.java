@@ -1,5 +1,6 @@
 package com.florent.hubmarketmobile.historique;
 
+import android.graphics.Color;
 import android.text.format.DateUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,20 +39,20 @@ public class HistoriqueListAdapter extends RecyclerView.Adapter<HistoriqueCellHo
 
     @Override
     public void onBindViewHolder(@NonNull HistoriqueCellHolder holder, int position) {
-        Commandes[] commandes = Singleton.getInstance().getUser().getCommandes();
-        System.out.println(Singleton.getInstance().getUser().getCommandes());
-        for(int i = 0; i < commandes.length; i++) {
-            for (Commandes commande : commandes) {
-                holder.idTextView.setText(commande.getId());
-                System.out.println(commande.getId());
-                holder.dateTextView.setText(commande.getDate());
-                System.out.println(commande.getDate());
-                holder.prixTextView.setText(String.valueOf(commande.getTotal_commande()));
-                System.out.println(String.valueOf(commande.getTotal_commande()));
-                holder.statusTextView.setText(commande.getStatus());
-                System.out.println(commande.getStatus());
-            }
+        holder.idTextView.setText(dataSource[position].getId());
+        System.out.println(dataSource[position].getId());
+        holder.dateTextView.setText(dataSource[position].getDate());
+        System.out.println(dataSource[position].getDate());
+        holder.prixTextView.setText(String.valueOf(dataSource[position].getTotal_commande()) + " €");
+        System.out.println(String.valueOf(dataSource[position].getTotal_commande()));
+        if (dataSource[position].getStatus() == "succeeded"){
+            holder.statusTextView.setText(dataSource[position].getStatus());
+            holder.statusTextView.setTextColor(Color.RED);
+        } else {
+            holder.statusTextView.setText(dataSource[position].getStatus());
+            holder.statusTextView.setTextColor(Color.GREEN);
         }
+        System.out.println(dataSource[position].getStatus());
     }
 
     @Override
