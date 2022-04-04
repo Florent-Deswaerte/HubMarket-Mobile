@@ -85,4 +85,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password" />
 
+    <CheckBox
+        android:id="@+id/rememberMeCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="24dp"
+        android:text="Se souvenir de moi"
+        app:layout_constraintBottom_toTopOf="@+id/btnLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password" />
+
+    <com.scwang.wave.MultiWaveHeader
+        android:id="@+id/waveHeader"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:rotation="180"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:mwhCloseColor="#FF8E46"
+        app:mwhStartColor="@android:color/holo_orange_dark"
+        app:mwhWaveHeight="60dp"
+        tools:ignore="MissingClass"
+        tools:layout_editor_absoluteX="34dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
