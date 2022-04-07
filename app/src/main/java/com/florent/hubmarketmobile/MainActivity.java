@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         if(tokenCachedString == null) {
             System.out.println("No user cached");
         }
-        // Sinon on décode le token et on réstore la session
+        // Sinon on décode le token et on restore la session
         else {
             String decodedToken = null;
             try {
