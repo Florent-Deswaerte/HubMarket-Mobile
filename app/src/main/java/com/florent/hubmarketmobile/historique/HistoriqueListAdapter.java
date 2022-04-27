@@ -41,8 +41,6 @@ public class HistoriqueListAdapter extends RecyclerView.Adapter<HistoriqueCellHo
     public void onBindViewHolder(@NonNull HistoriqueCellHolder holder, int position) {
         holder.idTextView.setText(dataSource[position].getId());
         System.out.println(dataSource[position].getId());
-        holder.dateTextView.setText(dataSource[position].getDate());
-        System.out.println(dataSource[position].getDate());
         holder.prixTextView.setText(String.valueOf(dataSource[position].getTotal_commande()) + " €");
         System.out.println(String.valueOf(dataSource[position].getTotal_commande()));
         if (dataSource[position].getStatus() == "succeeded"){

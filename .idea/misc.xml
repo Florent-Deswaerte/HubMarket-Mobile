@@ -19,6 +19,20 @@
         <entry key="..\:/EPSI/b2/DevMobile/HubMarket/app/src/main/res/layout/layout.xml" value="0.2755208333333333" />
         <entry key="..\:/EPSI/b2/DevMobile/HubMarket/app/src/main/res/layout/panier_list_cell.xml" value="0.346875" />
         <entry key="..\:/Users/clash/AndroidStudioProjects/HubMarket-Mobile/app/src/main/res/layout/activity_main.xml" value="0.34556159420289856" />
+<<<<<<< HEAD
+=======
+        <entry key="..\:/Users/clash/AndroidStudioProjects/HubMarket-Mobile/app/src/main/res/layout/activity_shop.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/clash/AndroidStudioProjects/HubMarket-Mobile/app/src/main/res/layout/activity_user.xml" value="0.12" />
+        <entry key="..\:/Users/clash/AndroidStudioProjects/HubMarket-Mobile/app/src/main/res/layout/activity_user_profil.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/clash/AndroidStudioProjects/HubMarket-Mobile/app/src/main/res/layout/fragment_historique.xml" value="0.33" />
+        <entry key="..\:/Users/clash/AndroidStudioProjects/HubMarket-Mobile/app/src/main/res/layout/fragment_information.xml" value="0.33" />
+        <entry key="..\:/Users/clash/AndroidStudioProjects/HubMarket-Mobile/app/src/main/res/layout/fragment_panier.xml" value="0.33" />
+        <entry key="..\:/Users/clash/AndroidStudioProjects/HubMarket-Mobile/app/src/main/res/layout/fragment_produits.xml" value="0.33125" />
+        <entry key="..\:/Users/clash/AndroidStudioProjects/HubMarket-Mobile/app/src/main/res/layout/fragment_user_profil.xml" value="0.33125" />
+        <entry key="..\:/Users/clash/AndroidStudioProjects/HubMarket-Mobile/app/src/main/res/layout/historique_list_cell.xml" value="0.45" />
+        <entry key="..\:/Users/clash/AndroidStudioProjects/HubMarket-Mobile/app/src/main/res/layout/panier_list_cell.xml" value="0.33" />
+        <entry key="..\:/Users/clash/AndroidStudioProjects/HubMarket-Mobile/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.24010416666666667" />
+>>>>>>> a2ae00c8426b2a7ccce9c77b6b13643d0796e966
         <entry key="..\:/Users/clash/AndroidStudioProjects/HubMarketMobile/app/src/main/res/layout/activity_main.xml" value="0.2826086956521739" />
       </map>
     </option>

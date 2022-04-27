@@ -7,13 +7,21 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.florent.hubmarketmobile.Categorie;
 import com.florent.hubmarketmobile.Produits;
 import com.florent.hubmarketmobile.R;
+
+import java.util.Arrays;
+import java.util.Comparator;
 
 public class PanierListAdapter extends RecyclerView.Adapter<PanierCellHolder> {
     private Produits[] dataSource;
 
     public PanierListAdapter(Produits[] dataSource) {
+        for (int i = 0; i > dataSource.length; i++){
+            char[] tab = dataSource[i].getCategories()[0].getNom().toCharArray();
+            Arrays.sort(tab);
+        }
         this.dataSource = dataSource;
     }
 
@@ -31,6 +39,8 @@ public class PanierListAdapter extends RecyclerView.Adapter<PanierCellHolder> {
     public void onBindViewHolder(@NonNull PanierCellHolder holder, int position) {
         holder.nomTextView.setText(dataSource[position].getNom());
         System.out.println(dataSource[position].getNom());
+        holder.categorieTextView.setText(dataSource[position].getCategories()[0].getNom());
+        System.out.println(dataSource[position].getCategories());
         holder.qtyTextView.setText("x " + dataSource[position].getQty());
         System.out.println(dataSource[position].getQty());
         holder.totalTextView.setText(String.valueOf(dataSource[position].getPrix()) + " €");
