@@ -12,8 +12,8 @@ public class User {
     String pays;
     String ville;
     String[] roles;
-    Object panier;
-    Object commandes;
+    private Panier panier;
+    private Commandes[] commandes;
 
     public User() {}
     public User(String username, String password) {
@@ -56,12 +56,16 @@ public class User {
         return this.roles;
     }
 
-    public Object getUserPanier() {
+    public Panier getPanier() {
         return this.panier;
     }
 
-    public Object getUserCommandes() {
-        return this.commandes;
+    public Commandes[] getCommandes() {
+        return commandes;
+    }
+
+    public void setCommandes(Commandes[] commandes) {
+        this.commandes = commandes;
     }
 
     public User resetUser() {

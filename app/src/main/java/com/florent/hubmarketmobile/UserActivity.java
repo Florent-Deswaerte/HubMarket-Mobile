@@ -1,8 +1,8 @@
 package com.florent.hubmarketmobile;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +14,8 @@ import com.florent.hubmarketmobile.fragments.ProduitsFragment;
 import com.florent.hubmarketmobile.fragments.UserProfilFragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.util.Arrays;
 
 public class UserActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener{
 
@@ -38,6 +40,7 @@ public class UserActivity extends AppCompatActivity implements BottomNavigationV
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
 
+        System.out.println(Arrays.toString(Singleton.getInstance().getUser().getCommandes()));
     }
 
     private boolean loadFragment(Fragment fragment){
@@ -48,6 +51,7 @@ public class UserActivity extends AppCompatActivity implements BottomNavigationV
         return false;
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         Fragment fragment = null;

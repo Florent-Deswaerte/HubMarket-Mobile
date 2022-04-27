@@ -5,6 +5,7 @@ public class Singleton {
     private static Singleton instance;
     private String token;
     private User user;
+    private Produits produits;
 
     private Singleton() {}
 
@@ -33,4 +34,6 @@ public class Singleton {
     public void setToken(String token) {
         this.token = token;
     }
+
+    public Produits getProduits() { return produits;}
 }

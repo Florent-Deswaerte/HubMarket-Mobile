@@ -1,5 +1,6 @@
 package com.florent.hubmarketmobile;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -23,6 +24,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ConnexionActivity extends AppCompatActivity {
     @Override
+    @SuppressLint("SetTextI18n")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -36,7 +38,7 @@ public class ConnexionActivity extends AppCompatActivity {
         Button btnLogin = (Button) findViewById(R.id.btnLogin);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://s4-8014.nuage-peda.fr/Hubmarket/public/api/")
+                .baseUrl("https://s4-8014.nuage-peda.fr/Hubmarket/public/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
