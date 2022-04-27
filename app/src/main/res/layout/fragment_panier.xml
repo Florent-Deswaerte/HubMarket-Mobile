@@ -6,6 +6,18 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/textViewCategorie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Categorie"
+        app:layout_constraintBottom_toTopOf="@+id/PanierRecyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.374"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPanier"
+        app:layout_constraintVertical_bias="0.726" />
+
+    <TextView
         android:id="@+id/textViewTotal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -36,7 +48,7 @@
         android:text="Quantité"
         app:layout_constraintBottom_toTopOf="@+id/PanierRecyclerView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.536"
+        app:layout_constraintHorizontal_bias="0.645"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewPanier"
         app:layout_constraintVertical_bias="0.726" />

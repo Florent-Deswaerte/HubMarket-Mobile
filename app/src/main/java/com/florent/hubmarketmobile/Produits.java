@@ -6,7 +6,7 @@ public class Produits {
     private String qty;
     private Float prix;
     private String[] fournisseur;
-    private String[] categories;
+    private Categorie[] categories;
 
     public Produits() {}
 
@@ -50,11 +50,11 @@ public class Produits {
         this.fournisseur = fournisseur;
     }
 
-    public String[] getCategories() {
+    public Categorie[] getCategories() {
         return categories;
     }
 
-    public void setCategories(String[] categories) {
+    public void setCategories(Categorie[] categories) {
         this.categories = categories;
     }
 }
