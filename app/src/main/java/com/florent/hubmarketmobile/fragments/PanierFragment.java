@@ -12,14 +12,12 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.florent.hubmarketmobile.Commandes;
 import com.florent.hubmarketmobile.Produits;
 import com.florent.hubmarketmobile.R;
 import com.florent.hubmarketmobile.Singleton;
-import com.florent.hubmarketmobile.historique.HistoriqueListAdapter;
 import com.florent.hubmarketmobile.panier.PanierListAdapter;
 
-public class PanierFragment extends Fragment {
+public class  PanierFragment extends Fragment {
 
     Button buttonPayer;
     Fragment InformationsFragments;

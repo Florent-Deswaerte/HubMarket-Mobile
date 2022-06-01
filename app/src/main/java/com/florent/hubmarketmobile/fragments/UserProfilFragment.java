@@ -17,8 +17,6 @@ public class UserProfilFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState){
-        TextView userNom = (TextView) view.findViewById(R.id.userNom);
-        userNom.setText(Singleton.getInstance().getUser().getUserNom());
         //System.out.println("TEST "+Singleton.getInstance().getUser().getUserPrenom());
 
     }

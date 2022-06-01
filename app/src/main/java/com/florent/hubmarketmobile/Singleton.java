@@ -1,5 +1,7 @@
 package com.florent.hubmarketmobile;
 
+import retrofit2.Retrofit;
+
 public class Singleton {
 
     private static Singleton instance;
@@ -35,5 +37,10 @@ public class Singleton {
         this.token = token;
     }
 
+    public Produits setProduit(Produits produits) {
+        this.produits = produits;
+        System.out.println("Set Produit executed: " + produits);
+        return this.produits;
+    }
     public Produits getProduits() { return produits;}
 }

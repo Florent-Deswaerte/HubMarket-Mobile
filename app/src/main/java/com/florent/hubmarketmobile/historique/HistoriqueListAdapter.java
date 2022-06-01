@@ -32,13 +32,12 @@ public class HistoriqueListAdapter extends RecyclerView.Adapter<HistoriqueCellHo
     public HistoriqueCellHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
     {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.historique_list_cell, parent,false);
-        HistoriqueCellHolder historiqueCellHolder = new HistoriqueCellHolder(view);
-
-        return historiqueCellHolder;
+        return new HistoriqueCellHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull HistoriqueCellHolder holder, int position) {
+
         holder.idTextView.setText(dataSource[position].getId());
         System.out.println(dataSource[position].getId());
         holder.prixTextView.setText(String.valueOf(dataSource[position].getTotal_commande()) + " €");

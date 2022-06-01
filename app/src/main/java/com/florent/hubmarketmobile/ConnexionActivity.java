@@ -43,6 +43,7 @@ public class ConnexionActivity extends AppCompatActivity {
                 .build();
 
         WebInterface webInterface = retrofit.create(WebInterface.class);
+
         TextView wrongIdentifiants = findViewById(R.id.wrongIdentifiants);
         EditText email = findViewById(R.id.login);
         EditText password = findViewById(R.id.password);
@@ -50,13 +51,14 @@ public class ConnexionActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                
                 User user = new User(email.getText().toString(), password.getText().toString());
                 Call<Token> connexionUser = webInterface.connexionUser(user);
 
                 connexionUser.enqueue(new Callback<Token>() {
                     @Override
                     public void onResponse(@NonNull Call<Token> call, @NonNull Response<Token> response) {
+                        System.out.println(response.body());
                         System.out.println(response.code());
                         if (response.code() == 401) {
                             wrongIdentifiants.setText("Invalid Credentials");

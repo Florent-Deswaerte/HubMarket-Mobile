@@ -17,26 +17,19 @@ import java.util.Comparator;
 public class PanierListAdapter extends RecyclerView.Adapter<PanierCellHolder> {
     private Produits[] dataSource;
 
-    public PanierListAdapter(Produits[] dataSource) {
-        for (int i = 0; i > dataSource.length; i++){
-            char[] tab = dataSource[i].getCategories()[0].getNom().toCharArray();
-            Arrays.sort(tab);
-        }
-        this.dataSource = dataSource;
-    }
+    public PanierListAdapter(Produits[] dataSource) { this.dataSource = dataSource; }
 
     @NonNull
     @Override
     public PanierCellHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
     {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.panier_list_cell, parent,false);
-        PanierCellHolder panierCellHolder = new PanierCellHolder(view);
-
-        return panierCellHolder;
+        return new PanierCellHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull PanierCellHolder holder, int position) {
+
         holder.nomTextView.setText(dataSource[position].getNom());
         System.out.println(dataSource[position].getNom());
         holder.categorieTextView.setText(dataSource[position].getCategories()[0].getNom());
