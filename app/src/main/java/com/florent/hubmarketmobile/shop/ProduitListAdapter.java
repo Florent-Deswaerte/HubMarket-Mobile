@@ -34,12 +34,12 @@ public class ProduitListAdapter extends RecyclerView.Adapter<ProduitCellHolder> 
         Categorie[] categories = (dataSource[position].getProduitCategorie());
         Fournisseur[] fournisseurs = (dataSource[position].getProduitFournisseur());
 
-        holder.nomProduitTextView.setText("Nom : " + dataSource[position].getProduitNom());
+        holder.nomProduitTextView.setText(dataSource[position].getProduitNom());
         holder.prixProduitTextView.setText("Prix : " +dataSource[position].getProduitPrix());
         holder.qtyProduitTextView.setText("Quantitée :" +dataSource[position].getProduitQty().toString());
         holder.nomCategorieTextView.setText("Catégorie :"+ categories[0].getNomCategorie());
-        holder.descriptionProduitTextView.setText("Description :"+ dataSource[position].getProduitDescription());
-        holder.fournisseurProduitTextView.setText("Fourniseeur :"+ fournisseurs[0].getLibelleFournisseur());
+        holder.descriptionProduitTextView.setText(dataSource[position].getProduitDescription());
+        holder.fournisseurProduitTextView.setText("Fournisseur :"+ fournisseurs[0].getLibelleFournisseur());
 
         Picasso.get()
                 .load(dataSource[position].getImagePath())
